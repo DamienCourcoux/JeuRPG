@@ -27,12 +27,18 @@ var app = {
         if (cellX === app.player.x && cellY === app.player.y) {
           cell.classList.add("player");
         }
-
         row.appendChild(cell);
       }
       var board = document.getElementById("board");
       board.appendChild(row);
     }
+  },
+  clearBoard: function () {
+    board.textContent = "";
+  },
+  redrawBoard: function () {
+    app.clearBoard();
+    app.drawBoard()
   },
   init: function () {
     app.drawBoard();
